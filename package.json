@@ -1,0 +1,13 @@
+{
+  "name": "petshop-root",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install && cd frontend && npm install",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && dotnet run",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
