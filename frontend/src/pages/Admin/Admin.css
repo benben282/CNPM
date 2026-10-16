@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/* 
+  =========================================
+  PETSHOP ADMIN CSS
+  ========================================= 
+  Các lớp (classes) dùng chung cho trang Quản trị.
+*/
+
+/* --- Override Tailwind text sizes cho Admin (text-base = 17px) --- */
+.admin-root {
+  font-size: 17px;
+}
+
+/* Override Tailwind text-* classes trong phạm vi admin */
+.admin-root .text-xs   { font-size: 13px !important; }
+.admin-root .text-sm   { font-size: 15px !important; }
+.admin-root .text-base { font-size: 17px !important; }
+.admin-root .text-lg   { font-size: 19px !important; }
+.admin-root .text-xl   { font-size: 21px !important; }
+.admin-root .text-2xl  { font-size: 24px !important; }
+.admin-root .text-3xl  { font-size: 28px !important; }
+
+/* --- Tổng quan trang & Card --- */
+.admin-container {
+  @apply space-y-8;
+}
+
+.admin-page-header {
+  @apply flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4;
+}
+
+.admin-page-title {
+  @apply text-3xl font-bold text-gray-800;
+}
+
+.admin-card {
+  @apply bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden;
+}
+
+/* --- Bảng (Tables) --- */
+.admin-table-wrapper {
+  @apply overflow-x-auto;
+}
+
+.admin-table {
+  @apply w-full text-left border-collapse;
+}
+
+.admin-table thead tr {
+  @apply bg-gray-50 text-gray-500 text-sm uppercase tracking-wider;
+}
+
+.admin-table th {
+  @apply p-6 font-semibold;
+}
+
+.admin-table tbody {
+  @apply divide-y divide-gray-100;
+}
+
+.admin-table tbody tr {
+  @apply hover:bg-orange-50/50 transition-colors;
+}
+
+.admin-table td {
+  @apply p-5 text-gray-800 text-base;
+}
+
+/* --- Nút bấm (Buttons) --- */
+.admin-btn-primary {
+  @apply flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold transition-all hover:-translate-y-1 shadow-xl shadow-orange-500/30;
+}
+
+.admin-btn-secondary {
+  @apply flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold transition-colors;
+}
+
+.admin-btn-icon {
+  @apply w-10 h-10 flex items-center justify-center rounded-xl transition-all;
+}
+
+/* --- Khu vực Form / Modal --- */
+.admin-modal-overlay {
+  @apply fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 backdrop-blur-sm;
+}
+
+.admin-modal-content {
+  @apply bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl;
+}
+
+.admin-modal-header {
+  @apply px-12 py-8 md:px-24 md:py-10 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white/95 backdrop-blur z-10;
+}
+
+.admin-modal-body {
+  @apply px-12 py-8 md:px-24 md:py-12 space-y-10;
+}
+
+.admin-form-label {
+  @apply block text-gray-700 font-bold mb-3 text-base md:text-lg;
+}
+
+.admin-form-input {
+  @apply w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-orange-500 outline-none text-base md:text-lg transition-colors;
+}
+
+.admin-form-checkbox-wrapper {
+  @apply flex items-center gap-4 bg-gray-50 p-6 rounded-xl border-2 border-gray-100;
+}
+
+/* --- Order Details Modal --- */
+.order-modal-backdrop {
+  @apply fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 sm:p-6;
+}
+
+.order-modal-container {
+  @apply bg-white rounded-2xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh];
+}
+
+.order-modal-header {
+  @apply p-6 md:p-8 border-b border-gray-100 flex justify-between items-center bg-gray-50 flex-shrink-0;
+}
+
+.order-modal-title {
+  @apply text-lg md:text-xl font-bold text-gray-800;
+}
+
+.order-modal-close-btn {
+  @apply text-gray-400 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-red-50;
+}
+
+.order-modal-body {
+  @apply p-8 md:p-12 overflow-y-auto flex-1;
+}
+
+.order-modal-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12;
+}
+
+.order-modal-card-blue {
+  @apply bg-blue-50/50 p-8 md:p-10 rounded-3xl border border-blue-100/50 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.order-modal-card-orange {
+  @apply bg-orange-50/50 p-8 md:p-10 rounded-3xl border border-orange-100/50 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.order-modal-card-title-blue {
+  @apply text-blue-800 text-sm font-bold uppercase tracking-wider mb-6 flex items-center gap-3;
+}
+
+.order-modal-card-title-orange {
+  @apply text-orange-800 text-sm font-bold uppercase tracking-wider mb-6 flex items-center gap-3;
+}
+
+.order-modal-card-content {
+  @apply space-y-4 text-gray-700 leading-relaxed text-base;
+}
+
+.order-modal-products-title {
+  @apply text-xl font-bold text-gray-800 border-b-2 border-gray-100 pb-5 mb-6 mt-4;
+}
+
+.order-modal-product-list {
+  @apply space-y-6;
+}
+
+.order-modal-product-item {
+  @apply flex flex-col xl:flex-row items-start xl:items-center justify-between bg-white border border-gray-100 p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 gap-6;
+}
+
+.order-modal-product-info {
+  @apply flex items-start md:items-center gap-6 md:gap-8 w-full xl:w-auto;
+}
+
+.order-modal-product-img {
+  @apply w-24 h-24 md:w-28 md:h-28 object-cover rounded-2xl shadow-sm border border-gray-100 flex-shrink-0;
+}
+
+.order-modal-product-no-img {
+  @apply w-24 h-24 md:w-28 md:h-28 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 border border-gray-100 text-sm flex-shrink-0;
+}
+
+.order-modal-product-details {
+  @apply flex-1 min-w-0;
+}
+
+.order-modal-product-name {
+  @apply font-bold text-gray-800 text-lg md:text-xl leading-relaxed break-words whitespace-normal mb-2;
+}
+
+.order-modal-product-price-qty {
+  @apply text-gray-500 text-base md:text-lg font-medium;
+}
+
+.order-modal-product-total {
+  @apply font-black text-orange-600 text-2xl md:text-3xl w-full xl:w-auto xl:text-right mt-4 xl:mt-0;
+}
+
+.order-modal-summary-box {
+  @apply flex justify-between items-center mt-10 p-6 md:p-8 bg-orange-50 border border-orange-100 rounded-3xl shadow-lg;
+}
+
+.order-modal-summary-label {
+  @apply text-orange-600 font-bold uppercase tracking-wider text-sm md:text-base;
+}
+
+.order-modal-summary-value {
+  @apply text-2xl md:text-3xl font-black text-orange-600 tracking-tight;
+}
+
+.order-modal-footer {
+  @apply p-6 md:p-8 border-t border-gray-100 bg-white flex justify-end flex-shrink-0;
+}
+
+.order-modal-footer-btn {
+  @apply px-8 py-3 bg-gray-100 text-gray-700 font-bold rounded-2xl hover:bg-gray-200 hover:text-gray-900 transition-all text-lg shadow-sm;
+}

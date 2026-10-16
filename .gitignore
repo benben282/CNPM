@@ -1,0 +1,26 @@
+# Node
+node_modules/
+frontend/dist/
+
+# .NET / Visual Studio
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Biến môi trường & log
+.env
+.env.*
+*.log
+
+# File dump/thử nghiệm
+_orders.json
+ngrok_reqs.json
+backend/o.json
+
+# Log build/chạy cục bộ
+backend/build_err*.txt
+backend/error.txt
+backend/run_error.txt
